@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+
+function App() {
+  const [steps, setSteps] = useState(0);
+  const [calories, setCalories] = useState(0);
+  const [water, setWater] = useState(0);
+  const [workout, setWorkout] = useState("");
+
+  return (
+    <div style={{textAlign:"center", background:"#e8f5e9",
+      minHeight:"100vh", padding:"20px", fontFamily:"Arial"}}>
+
+      <h1>🏃 Fitness Tracker</h1>
+      <h3>Track Your Daily Fitness</h3>
+
+      <h2>Steps: {steps}</h2>
+      <button onClick={() => setSteps(steps + 1000)}>Add Steps</button>
+
+      <h2>Calories: {calories} kcal</h2>
+      <button onClick={() => setCalories(calories + 50)}>Add Calories</button>
+
+      <h2>Water: {water} Glasses</h2>
+      <button onClick={() => setWater(water + 1)}>Add Water</button>
+
+      <h2>Workout Tracker</h2>
+      <input value={workout}
+        onChange={e => setWorkout(e.target.value)}
+        placeholder="Enter workout"/>
+      <p>{workout}</p>
+
+    </div>
+  );
+}
+
+export default App;
